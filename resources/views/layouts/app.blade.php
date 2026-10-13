@@ -2,28 +2,31 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>@yield('title', 'Library System')</title>
+
+    <title>
+        @yield('title')
+    </title>    
 </head>
 <body>
     <header>
         <h1>Library System</h1>
+
         <nav>
-            <a href="/dashboard">Dashboard</a> |
-            <a href="/books">Books</a> |
-            <a href="/categories">Categories</a> |
-            <a href="/members">Members</a>
+            <a href="{{ route('books.index') }}">Books</a> 
+            <a href='/categories'>Categories</a>
+            <a href='/members'>Members</a>
         </nav>
+
         <hr>
     </header>
 
     <main>
-        {{-- Tempat konten dari halaman lain akan dimasukkan --}}
         @yield('content')
     </main>
 
     <footer>
         <hr>
-        <p>&copy; 2026 Library System</p>
+        <p>Library System</p>
     </footer>
 </body>
 </html>

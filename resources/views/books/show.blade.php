@@ -1,10 +1,14 @@
 @extends('layouts.app')
 
-@section('title', 'Detail Buku')
+@section('title', $title)
 
 @section('content')
-    <h2>Detail Buku</h2>
-    <p>Informasi detail untuk buku yang dipilih.</p>
-    <hr>
-    <p><strong>ID Buku:</strong> {{ $id }}</p>
+    <a href="{{ route('books.index') }}">Daftar Buku</a>
+
+    <ul>
+        <h3>{{ $book->title }}</h3>
+        <p>Penulis: {{ $book->author }}</p>
+        <p>Tahun: {{ $book->year }}</p>
+        <p>Stok: {{ $book->stock }}</p>
+        </ul>
 @endsection
