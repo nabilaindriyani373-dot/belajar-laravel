@@ -3,8 +3,11 @@
 @section('title', $title)
 
 @section('content')
+    {{-- Notifikasi Sukses Login / Pesan lainnya --}}
     @if (session('Success'))
-        <p>{{ session('Success') }}</p>
+        <div style="padding: 10px 15px; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 4px; margin-bottom: 15px; font-weight: bold;">
+            {{ session('Success') }}
+        </div>
     @endif
 
     <a href="{{ route('books.create') }}">Tambah Buku</a>
