@@ -23,6 +23,13 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::resource('books', BookController::class);
+
     Route::get('/categories', [CategoryController::class, 'index'])->name('kategori');
     Route::get('/members', [MemberController::class, 'index'])->name('member');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dasboard');
 });
+
+    Route::get('/users', function () {
+        return "Halo";
+    })->middleware(['auth', 'can:manage-users']);
+
